@@ -1,0 +1,28 @@
+  "name": "marvin-nodejs-sdk",
+  "version": "1.0.0",
+  "description": "marvin sdk for nodejs",
+  "main": "index.js",
+  "scripts": {
+
+  },
+  "devDependencies": {
+    "underscore": "^1.8.3"
+  },
+  "keywords": [
+    "marvin",
+    "nodejs",
+	"sdk"
+  ],
+  "engines": {
+    "node": "6.9.0"
+  },
+  "author": "anlibraly",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Anlibraly/marvin-nodejs-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Anlibraly/marvin-nodejs-sdk/issues"
+  },
+  "homepage": "https://github.com/Anlibraly/marvin-nodejs-sdk",
+  "license": "MIT"
