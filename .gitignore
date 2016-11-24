@@ -1,5 +1,9 @@
-tmp/
+tmp
+logs
+*.log
+npm-debug.log*
 .DS_Store
 **/.DS_Store
 **/npm-debug.log
-node_modules/
+coverage
+node_modules

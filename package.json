@@ -1,28 +1,37 @@
+{
   "name": "marvin-nodejs-sdk",
   "version": "1.0.0",
-  "description": "marvin sdk for nodejs",
+  "description": "marvin sdk for node",
   "main": "index.js",
-  "scripts": {
-
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "promise": "~7.1.1",
+    "underscore": "^1.8.3"
   },
   "devDependencies": {
-    "underscore": "^1.8.3"
+    "chai": "^3.5.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.0.2"
+  },
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha test/*.js",
+    "cover": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec test"    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anlibraly/marvin-nodejs-sdk.git"
   },
   "keywords": [
     "marvin",
     "nodejs",
-	"sdk"
+    "sdk"
   ],
-  "engines": {
-    "node": "6.9.0"
-  },
   "author": "anlibraly",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Anlibraly/marvin-nodejs-sdk.git"
-  },
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Anlibraly/marvin-nodejs-sdk/issues"
   },
-  "homepage": "https://github.com/Anlibraly/marvin-nodejs-sdk",
-  "license": "MIT"
+  "homepage": "https://github.com/Anlibraly/marvin-nodejs-sdk#readme"
+}

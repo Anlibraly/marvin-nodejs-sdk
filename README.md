@@ -1,5 +1,3 @@
-# Marvin Nodejs Sdk
-
 # Features
 
 - create a marvin item

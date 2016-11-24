@@ -1,15 +1,57 @@
-'use strict';
-let marvin = require("../index");
-//测试程序
-let channel = ["购物车", "闪购", "新人促销"];
-let bank = ["农行", "工行", "建行", "招商银行"];
-let i = 0, mv = marvin("trade.status.node");
-setInterval(function(){
-	mv
-	.add_tag("channel",channel[Math.floor(Math.random()*2)])
-	.add_tag("channel1",channel[Math.floor(Math.random()*1)])
-	.add_field("qps", 1)
-	.add_field("rt", 23)
-	.commit();	
-}, 0.01);
+var _ = require('underscore');
+var Promise = require('promise');
+var expect = require('chai').expect;
+var marvin = require('../index');
+var metric = require('../monitor_metric');
 
+describe('#index', function(){
+    var mv, console_error_store = console.error;;
+
+    before(function(done){
+        mv = marvin('trade.status.node');
+        done();
+    });
+
+    after(function(){
+        console.error = console_error_store;
+    });
+
+    describe('#new_marvin', function(){
+        it('should give marvin item id, return false', function(done){
+            Promise.resolve()
+            .then(function(){
+                return Promise.resolve(marvin(''));
+            })
+            .then(function(r){
+                expect(r).to.be.false;
+                done();
+            })
+            .catch(function(e){console.log(e)});
+        });
+
+        it('time should be 20', function(done){
+            Promise.resolve()
+            .then(function(){
+                return Promise.resolve(marvin('trade.status.node0', 20));
+            })
+            .then(function(r){
+                expect(r.period).to.equal(20);
+                done();
+            })
+            .catch(function(e){console.log(e)});
+        });
+
+        it('should return a exist MonitorMetric Object', function(done){
+            Promise.resolve()
+            .then(function(){
+                return Promise.resolve(marvin('trade.status.node'));
+            })
+            .then(function(r){
+                expect(r).to.be.equal(mv);
+                done();
+            })
+            .catch(function(e){console.log(e)});
+        });
+    });
+
+});
