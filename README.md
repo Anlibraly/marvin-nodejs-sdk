@@ -1,5 +1,3 @@
-# Marvin Nodejs Sdk
-
 # Features
 
 - create a marvin item
@@ -42,3 +40,5 @@ fill fields of marvin item, then marvin can caculate these fields by time and sh
 ```
 
 # License
+
+[MIT](https://github.com/Anlibraly/marvin-nodejs-sdk/blob/master/LICENSE)
