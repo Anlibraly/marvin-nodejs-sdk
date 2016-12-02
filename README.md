@@ -1,5 +1,8 @@
 # Features
 
+[![Build Status](https://travis-ci.org/Anlibraly/marvin-nodejs-sdk.svg?branch=master)](https://travis-ci.org/Anlibraly/marvin-nodejs-sdk)
+[![Coverage Status](https://coveralls.io/repos/github/Anlibraly/marvin-nodejs-sdk/badge.svg?branch=master)](https://coveralls.io/github/Anlibraly/marvin-nodejs-sdk?branch=master)
+
 - create a marvin item
 - add item tags 
 - fill item fields
