@@ -1,6 +1,11 @@
 language: node_js 
-service_name: travis-pro
+
+node_js:
+  - 6.9.0
+
+service_name: marvin-nodejs-sdk
 repo_token: e1lblZhacWSZRVQHEnJmoIwC9myzEGdQM
+
 sudo: false 
 script: npm run test 
 after_script: npm run cover
