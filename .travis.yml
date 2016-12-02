@@ -3,8 +3,8 @@ language: node_js
 node_js:
   - 6.9.0
 
-repo_token: e1lblZhacWSZRVQHEnJmoIwC9myzEGdQM
-
 sudo: false 
+
 script: npm run test 
+
 after_script: npm run cover
