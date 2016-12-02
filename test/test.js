@@ -54,4 +54,19 @@ describe('#index', function(){
         });
     });
 
+
+    describe('#add_tag', function(){
+        it('should give marvin item id, return false', function(done){
+            Promise.resolve()
+            .then(function(){
+                return Promise.resolve(marvin(''));
+            })
+            .then(function(r){
+                expect(r).to.be.false;
+                done();
+            })
+            .catch(function(e){console.log(e)});
+        });
+    });    
+
 });

@@ -1,0 +1,9 @@
+language: node_js 
+service_name: travis-pro
+repo_token: e1lblZhacWSZRVQHEnJmoIwC9myzEGdQM
+node_js: 
+    - stable
+    - 6.9 
+sudo: false 
+script: npm run test 
+after_script: npm run cover
