@@ -3,7 +3,6 @@ language: node_js
 node_js:
   - 6.9.0
 
-service_name: marvin-nodejs-sdk
 repo_token: e1lblZhacWSZRVQHEnJmoIwC9myzEGdQM
 
 sudo: false 
