@@ -45,7 +45,7 @@ function mkdir(pos, dirArray, marvin_save) {
 
     fs.exists(currentDir, function(exists){
         if(!exists){
-            fs.mkdir(currentDir, function(err){
+            fs.mkdir(currentDir, 777, function(err){
                 if(err){
                     console.error(err);
                 }else{
@@ -99,8 +99,11 @@ let countFile = (dirName) => {
     return Promise.resolve(lists.length);
 };
 
-let error_log = (msg, fileName) => {
+let error_log = (msg, fileName, mode) => {
     fs.writeFile(fileName, `${msg}\n`, {flag: 'a'}, function (err) {
+        if(mode){
+            fs.chmodSync(fileName, 755);
+        }
         return Promise.resolve(!err);
     });
 };
@@ -111,14 +114,14 @@ module.exports = function(msg, period) {
         let now = +new Date();
         let fileName = `${path}/${period}/${(now-now%(period*1000))/1000}.log`;
         if(exists(fileName)){
-            return error_log(msg, fileName);
+            return error_log(msg, fileName, false);
         }else{
             return countFile(period)
             .then((count) => {
                 if (count - 2 >= maxFileNums) {
                     return Promise.resolve(false);
                 }else{
-                    return error_log(msg, fileName);
+                    return error_log(msg, fileName, true);
                 }
             });
         }
