@@ -1,6 +1,6 @@
 {
   "name": "marvin-nodejs-sdk",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "marvin sdk for node",
   "main": "index.js",
   "directories": {
