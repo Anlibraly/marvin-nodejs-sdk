@@ -21,7 +21,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Anlibraly/marvin-nodejs-sdk.git"
+    "url": "git+https://github.com/beibei-nodejs/marvin-nodejs-sdk.git"
   },
   "keywords": [
     "marvin",
@@ -31,7 +31,7 @@
   "author": "anlibraly",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Anlibraly/marvin-nodejs-sdk/issues"
+    "url": "https://github.com/beibei-nodejs/marvin-nodejs-sdk/issues"
   },
-  "homepage": "https://github.com/Anlibraly/marvin-nodejs-sdk#readme"
+  "homepage": "https://github.com/beibei-nodejs/marvin-nodejs-sdk#readme"
 }
