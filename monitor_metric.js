@@ -12,7 +12,7 @@ function MonitorMetric(ins, period) {
     this.tags = [];
     this.fields = [];
 
-    this.commit = () => {
+    this.out = () => {
         let tagStr = "";
         //this.tags =  _.sortBy(this.tags, function(a){return a;});
         //tag_string
@@ -41,11 +41,24 @@ function MonitorMetric(ins, period) {
             return false;
         }
 
-        monitor(`${this.mIns},${tagStr} ${fieldStr}`, this.period);
         this.tags = [];
         this.fields = [];
+        return `${this.mIns},${tagStr} ${fieldStr}`;        
+    }
+
+    this.commit = () => {
+        let outStr = this.out();
+        monitor(outStr, this.period);
         return true;
     };
+
+    this._tofile = inList => {
+        if(!inList || inList.length == 0 || !inList[0]){
+            return false;
+        }
+        monitor(inList.join('\n'), this.period);
+        return true;
+    }
 
     this.add_tag = (tagKey, tagVal) => {
         if(this.tags.length > 100){
