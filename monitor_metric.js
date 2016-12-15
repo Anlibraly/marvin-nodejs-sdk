@@ -48,15 +48,15 @@ function MonitorMetric(ins, period) {
 
     this.commit = () => {
         let outStr = this.out();
-        monitor(outStr, this.period);
+        monitor(outStr, this.period, 0);
         return true;
     };
 
-    this._tofile = inList => {
+    this._tofile = (inList, delay = 0) => {
         if(!inList || inList.length == 0 || !inList[0]){
             return false;
         }
-        monitor(inList.join('\n'), this.period);
+        monitor(inList.join('\n'), this.period, delay);
         return true;
     }
 

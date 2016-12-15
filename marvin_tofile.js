@@ -108,11 +108,11 @@ let error_log = (msg, fileName, mode) => {
     });
 };
 
-module.exports = function(msg, period) {
+module.exports = function(msg, period, delay) {
     return Promise.resolve()
     .then(() => mkdirs(`${path}/${period}`, function(){
         let now = +new Date();
-        let fileName = `${path}/${period}/${(now-now%(period*1000))/1000}.log`;
+        let fileName = `${path}/${period}/${(now-now%(period*1000))/1000-delay*period}.log`;
         if(exists(fileName)){
             return error_log(msg, fileName, false);
         }else{

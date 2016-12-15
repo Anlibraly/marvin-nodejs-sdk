@@ -15,6 +15,6 @@ while(i < 10){
     inList.push(info);
     i++;
 }
-
-mv._tofile(inList);
+//write 2 minites early file
+mv._tofile(inList, 2);
 
